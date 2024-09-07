@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for item in cart_items %}
+        <li>
+            {{ item.product.name }} - ${{ item.product.price }} (Quantity: {{ item.quantity }})
+            <form method="POST" action="{% url 'buy_now' item.product.id %}">
+                {% csrf_token %}
+                <button type="submit">Buy Now</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <p>Welcome, {{ user.username }}. You have admin privileges.</p>
+    <a href="{% url 'manage_products' %}">Manage Products</a>
+   
+    <a href="{% url 'view_orders' %}">View Orders</a>
+    <a href="{% url 'view_all_users' %}">View users</a>
+    <a href="{% url 'view_vendors' %}">View vendors</a>
+   
+
+</body>
+</html>
